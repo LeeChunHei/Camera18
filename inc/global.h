@@ -23,6 +23,8 @@
 #include <libsc/joystick.h>
 
 //LCD Header File
+
+#include <libsc/k60/touchscreen_lcd.h>
 #include <libsc/st7735r.h>
 #include <libsc/lcd_console.h>
 #include <libsc/lcd_typewriter.h>
@@ -37,7 +39,7 @@
 #include<libsc/futaba_s3010.h>
 
 //Motor Header File
-#include<libsc/dir_motor.h>
+#include<libsc/alternate_motor.h>
 #include<libsc/motor.h>
 
 //Dir Encoder Header File
@@ -60,7 +62,8 @@
 #include <../inc/util/control.h>
 
 //Menu Header File
-#include <../inc/util/menu.h>
+#include <libutil/normal_menu.h>
+#include <libutil/touch_menu.h>
 
 //Util Header File
 #include <../inc/util/util.h>
@@ -86,26 +89,28 @@ extern Led *led1;
 extern Led *led2;
 extern Led *led3;
 extern Led *led4;
-extern Joystick *joystick;
-extern St7735r *lcd;
-extern LcdConsole *console;
-extern LcdTypewriter *type_writer;
+extern libsc::k60::TouchScreenLcd* touch_lcd;
+extern libsc::St7735r* lcd;
+extern libsc::LcdConsole* console;
 extern BatteryMeter *battery_meter;
 extern PassiveBuzzer *buzzer;
 extern Ov7725 *cam;
 extern FutabaS3010 *servo;
-extern DirMotor *left_motor;
-extern DirMotor *right_motor;
+extern AlternateMotor *left_motor;
+extern AlternateMotor *right_motor;
 extern DirEncoder *left_encoder;
 extern DirEncoder *right_encoder;
 extern JyMcuBt106 *bt;
 //extern util::BTComm *bt;
 extern Flash *flash;
-//extern Pit *pit;
 extern util::Control *car;
+extern libsc::Joystick* joystick;
 
 //Global variable
 extern uint8_t contrast;
+extern uint8_t corner_window_size;
+extern uint8_t corner_min;
+extern uint8_t corner_max;
 extern const uint16_t cam_height;
 extern const uint16_t cam_width;
 extern const uint16_t servo_right_bound;
