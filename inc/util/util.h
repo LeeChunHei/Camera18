@@ -16,7 +16,10 @@ void battery_test();
 void led_test();
 void servo_tune();
 void camera_tune();
-bool camera_point_check(const Byte* buff, uint16_t x, uint16_t y);
+//return value 2 is out of bound
+uint8_t camera_point_check(const Byte* buff, int16_t x, int16_t y);
+//return true for black and false for white
+bool simple_camera_point_check(const Byte* buff, int16_t x, int16_t y);
 void PrintLogo();
 
 }

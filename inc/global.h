@@ -47,29 +47,9 @@
 
 //Bluetooth Header File
 #include <libsc/k60/jy_mcu_bt_106.h>
-//#include <../inc/util/bluetooth.h>
-
-//Battery Meter Header File
-#include <libsc/battery_meter.h>
-
-//Flash Header File
-#include <libbase/k60/flash.h>
-
-//Pit Header File
-#include <libbase/k60/pit.h>
-
-//Speed Control Header File
-#include <../inc/util/control.h>
-
-//Menu Header File
-#include <libutil/normal_menu.h>
-#include <libutil/touch_menu.h>
 
 //Util Header File
 #include <../inc/util/util.h>
-
-//Snake Game Header File
-#include <../inc/game/snake_game.h>
 
 //namespace
 using namespace libsc;
@@ -80,43 +60,25 @@ using namespace std;
 
 //Struct
 struct coor {
-	uint8_t x;
-	uint8_t y;
+	int16_t x;
+	int16_t y;
 };
 
 //Global pointer
-extern Led *led1;
-extern Led *led2;
-extern Led *led3;
-extern Led *led4;
-extern libsc::k60::TouchScreenLcd* touch_lcd;
-extern libsc::St7735r* lcd;
-extern libsc::LcdConsole* console;
-extern BatteryMeter *battery_meter;
-extern PassiveBuzzer *buzzer;
-extern Ov7725 *cam;
-extern FutabaS3010 *servo;
-extern AlternateMotor *left_motor;
-extern AlternateMotor *right_motor;
-extern DirEncoder *left_encoder;
-extern DirEncoder *right_encoder;
 extern JyMcuBt106 *bt;
-//extern util::BTComm *bt;
-extern Flash *flash;
-extern util::Control *car;
-extern libsc::Joystick* joystick;
+extern St7735r *lcd;
 
 //Global variable
 extern uint8_t contrast;
 extern uint8_t corner_window_size;
 extern uint8_t corner_min;
 extern uint8_t corner_max;
-extern const uint16_t cam_height;
-extern const uint16_t cam_width;
-extern const uint16_t servo_right_bound;
-extern const uint16_t servo_center;
-extern const uint16_t servo_left_bound;
+#define cam_height 160
+#define cam_width 128
 
-
+extern Byte cam_buff[7680];
+extern vector<coor> left_edge;
+extern vector<coor> right_edge;
+extern coor corner_pos[2];	//index 0 is left corner coor, 1 is right corner
 
 #endif /* INC_GLOBAL_H_ */
