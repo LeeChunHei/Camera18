@@ -7,6 +7,10 @@
 
 #include <../inc/algorithm/edge_corner_evaluate.h>
 
+vector<coor> left_edge;
+vector<coor> right_edge;
+coor corner_pos[2] = { };	//index 0 is left corner coor, 1 is right corner
+
 enum dir {
 	up, up_left, left, down_left, down, down_right, right, up_right
 };

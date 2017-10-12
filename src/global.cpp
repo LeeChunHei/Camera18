@@ -16,8 +16,4 @@ uint8_t contrast = 0x40;
 uint8_t corner_window_size = 7;	//the square for detection would be in size corener_range*2+1
 uint8_t corner_min = 36;
 uint8_t corner_max = 72;
-
 Byte cam_buff[7680] = { };
-vector<coor> left_edge;
-vector<coor> right_edge;
-coor corner_pos[2] = { };	//index 0 is left corner coor, 1 is right corner

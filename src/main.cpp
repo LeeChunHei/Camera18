@@ -53,7 +53,7 @@ int main() {
 
 	Timer::TimerInt algo_start_time;
 	while (1) {
-		if (camera_buffer_index >= 7680) {
+		if (camera_buffer_index >= cam_width * cam_height / 8) {
 //			for (uint8_t y = 0; y < 160; y++) {
 //				for (uint8_t x = 0; x < 128; x++) {
 //					lcd->SetRegion(Lcd::Rect(x, y, 1, 1));

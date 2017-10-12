@@ -73,12 +73,9 @@ extern uint8_t contrast;
 extern uint8_t corner_window_size;
 extern uint8_t corner_min;
 extern uint8_t corner_max;
+extern Byte cam_buff[7680];
+
 #define cam_height 160
 #define cam_width 128
-
-extern Byte cam_buff[7680];
-extern vector<coor> left_edge;
-extern vector<coor> right_edge;
-extern coor corner_pos[2];	//index 0 is left corner coor, 1 is right corner
 
 #endif /* INC_GLOBAL_H_ */
